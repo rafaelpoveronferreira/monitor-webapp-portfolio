@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Sobrescrever de modo forçado configuraçõe padrões do MUI Data Grid, eliminando UI e scroll indesejado.
+Aqui eu desabilito a possibilidade o usuário clicar no header e reordenar a lista de pacientes. Apenas o sort inicial é permitido (ordenação por hora descendente)*/
+.MuiDataGrid-columnHeader {
+  pointer-events: none !important;
+}
+
+.MuiDataGrid-columnSeparator--sideRight {
+    display: none !important;
+  } 
+.MuiDataGrid-sortIcon {
+    display: none !important;
+  }
+
+.MuiDataGrid-virtualScroller {
+  overflow-x: hidden !important;
+}
+
+@layer base {
+    :root {
+        overflow: hidden;
+    }
+     
+
+    h1 {
+        @apply text-5xl tracking-wider
+    }
+}
